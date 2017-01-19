@@ -1,11 +1,4 @@
 describe('Pure functions', function() {
-  describe('getNextEpisodeInPlaylist()', function () {
-    it('should return the next episode in a playlist', function() {
-      const nextEpisode = getNextEpisodeInPlaylist(episodes);
-      expect(nextEpisode).toEqual(episodes[0]);
-    });
-  });
-
   describe('addToPlaylist()', function () {
     it('should add a given episode to a given playlist', function() {
       const updatedPlaylist = addToPlaylist(episodes, finaleEpisode);
@@ -27,6 +20,13 @@ describe('Pure functions', function() {
     it('should not modify the original episodes array', function() {
       removeFromPlaylist(episodes, episodes[0]);
       expect(episodes.length).toEqual(9);
+    });
+  });
+
+  describe('getNextEpisodeInPlaylist()', function () {
+    it('should return the next episode in a playlist', function() {
+      const nextEpisode = getNextEpisodeInPlaylist(episodes);
+      expect(nextEpisode).toEqual(episodes[0]);
     });
   });
 
